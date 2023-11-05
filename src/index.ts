@@ -1,3 +1,2 @@
-import { convertToRoman } from './roman';
+import { bowlingGame } from './bowlingGame';
 
-console.log(convertToRoman(505));

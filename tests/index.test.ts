@@ -1,13 +1,13 @@
-import { convertToRoman } from '../src/roman';
+import { bowlingGame } from '../src/bowlingGame';
 
-describe("test convertToRoman function", () => {
-    it("should return MMM for convertToRoman(3000)", () => {
-        expect(convertToRoman(3000)).toBe("MMM");
+describe("test bowlingGame function", () => {
+    it("should return correct score for all strikes(300)", () => {
+        expect(bowlingGame("X, X, X, X, X, X, X, X,,X, X, X, X")).toBe(300);
     });   
-    it("should return XCIII for convertToRoman(93)", () => {
-        expect(convertToRoman(93)).toBe("XCIII");
+    it("should return correct score for all spares(90)", () => {
+        expect(bowlingGame("9, 9, 9, 9, 9, 9, 9, 9, 9, 9")).toBe(90);
     }); 
-    it("should return IV for convertToRoman(4)", () => {
-        expect(convertToRoman(4)).toBe("IV");
+    it("should return correct score for 21 rolls of 5", () => {
+        expect(bowlingGame("5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/5 ")).toBe(150);
     }); 
     });
