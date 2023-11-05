@@ -1,3 +1,3 @@
-import { add } from './calc';
+import { convertToRoman } from './roman';
 
-console.log(add(2,2));
+console.log(convertToRoman(505));
