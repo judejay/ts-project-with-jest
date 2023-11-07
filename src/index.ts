@@ -1,3 +1,3 @@
-import { convertToRoman } from './roman';
+import { marsRover } from './marsRover';
 
-console.log(convertToRoman(505));
+console.log(marsRover("move"));
