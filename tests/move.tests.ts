@@ -1,13 +1,15 @@
-import { marsRover } from '../src/marsRover';
+import { position } from '../src/move/position';
+import { spin } from '../src/move/spin';
+import { advance } from '../src/move/advance';
 
 describe("rover should move according to command", () => {
     it("should spin left", () => {
-        expect(marsRover("L")).toBe("spin");
+        expect(spin("L")).toBe("spin");
     });   
     it("rover should spin right", () => {
-        expect(marsRover("R")).toBe("spin");
+        expect(spin("R")).toBe("spin");
     }); 
     it("rover should advance one unit", () => {
-        expect(marsRover("M")).toBe("moved");
+        expect(advance("M")).toBe("moved");
     }); 
     });
