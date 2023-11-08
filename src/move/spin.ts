@@ -1,17 +1,16 @@
 import { Grid } from "../types/types";
 
 export const spin = (direction: string, position: Grid) => {
-    let [x, y, o ] = position
-switch (direction) {
-    case "R":
-        if(o === "N") {
-           o = "E"
-            return [x, y, o]
-        }
-        
+  let [x, y, o] = position;
+  if ((direction = "R"))
+    switch (o) {
+      case "N":
+        o = "E";
+        return [x, y, o];
+
         break;
 
-    default:
+      default:
         break;
-}
-}
+    }
+};
