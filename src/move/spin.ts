@@ -6,11 +6,18 @@ export const spin = (direction: string, position: Grid) => {
     switch (o) {
       case "N":
         o = "E";
-        return [x, y, o];
-
         break;
-
+      case "S":
+        o = "W";
+        break;
+      case "E":
+        o = "S";
+        break;
+      case "W":
+        o = "N"
+        break;
       default:
         break;
     }
+  return [x, y, o];
 };

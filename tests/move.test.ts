@@ -12,6 +12,15 @@ describe("rover should move according to command", () => {
     it("rover should spin right", () => {
         expect(spin("R", [0, 0, "N"])).toStrictEqual( [0, 0, "E"]);
     }); 
+    it("rover should spin right", () => {
+        expect(spin("R", [0, 0, "S"])).toStrictEqual( [0, 0, "W"]);
+    });
+    it("rover should spin right", () => {
+        expect(spin("R", [0, 0, "W"])).toStrictEqual( [0, 0, "N"]);
+    });
+    it("rover should spin right", () => {
+        expect(spin("R", [0, 0, "E"])).toStrictEqual( [0, 0, "S"]);
+    });
     it("rover should advance one unit", () => {
         expect(advance("M")).toBe("moved");
     }); 
