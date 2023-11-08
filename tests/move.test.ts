@@ -39,4 +39,7 @@ describe("Rover should move according to command", () => {
     it("Rover should advance one unit West from initial position", () => {
         expect(advance( [0, 0, "W"])).toStrictEqual([4, 0, "W"]);
     });
+    it("Rover should advance one unit South from initial position", () => {
+        expect(advance( [0, 0, "S"])).toStrictEqual([0, 4, "S"]);
+    });
     });
