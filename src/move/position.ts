@@ -5,17 +5,17 @@ import { Grid, RoverInstruction } from "../types/types"
 
 
 export const resetPosition = (): Grid => {
-    return [0, 0]
+    return [0, 0, 'N']
 }
 
 function getInstruction (): RoverInstruction {
-    //readfrom file
+    //read from list
     return 'L';
 }
 
-function executeInstruction( instruction: RoverInstruction) : Grid {
-    return [0,0] //orientation
-}
+// function executeInstruction( instruction: RoverInstruction) : Grid {
+//     return [0,0] //orientation
+// }
 
 
 function isInstruction(input: string)
@@ -27,9 +27,9 @@ return ['L', 'R', 'M'].includes(input);
 
 const someInstruction = getInstruction(); // returns a string
 
-if(isInstruction(someInstruction))
-executeInstruction(someInstruction);
-// 🥳 no error!
-else {
+// if(isInstruction(someInstruction))
+// executeInstruction(someInstruction);
+// // 🥳 no error!
+// else {
 
-}
+// }
