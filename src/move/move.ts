@@ -1,6 +1,7 @@
 import { Grid } from "../types/types";
+import { advance } from "./advance";
 
-export const spin = (direction: string, position: Grid) => {
+export const move = (direction: string, position: Grid) => {
   let [x, y, o] = position;
   if (direction === "R"){
        switch (o) {
@@ -21,10 +22,10 @@ export const spin = (direction: string, position: Grid) => {
     }
   }
  
-  else {
+  else if (direction === "L") {
     switch (o) {
       case "N":
-        console.log("here" , o)
+        
         o = "W";
         break;
       case "S":
@@ -39,6 +40,9 @@ export const spin = (direction: string, position: Grid) => {
       default:
         break;
     }
+  }
+  else {
+   [x, y, o] = advance(position)
   }
   return [x, y, o];
 };
