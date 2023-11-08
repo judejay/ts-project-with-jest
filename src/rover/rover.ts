@@ -1,3 +1,4 @@
+import { move } from "../move/move";
 import { Grid, RoverInstruction } from "../types/types";
 
 
@@ -8,20 +9,23 @@ export function isInstruction(input: string)
 return ['L', 'R', 'M'].includes(input);
 }
 
-// export function executeInstruction( instruction: RoverInstruction) : Grid {
-//      return [ 0, 0,"N"] 
-//  }
-// const someInstruction = getInstruction()
+ export function executeInstruction(position: Grid, instruction: RoverInstruction) : Grid {
+    if(isInstruction(instruction)){
+         var moved = move(instruction,position) ;
+    } 
+     return moved!;
+  };
 
-// export function getInstruction (): RoverInstruction {
-//      if(isInstruction(someInstruction))
-//  executeInstruction(someInstruction);
-//  // 🥳 no error!
-//  else {
+  export function followsCommands(list: RoverInstruction[], position: Grid ): Grid {
+      return   list.reduce(
+            (accumulator, currentValue) => executeInstruction(accumulator, currentValue),   
+            position)   
+    
 
-//  }
-//     return 'L';
-// }
+ }
+
+
+
 
 
 

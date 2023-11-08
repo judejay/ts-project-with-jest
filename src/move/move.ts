@@ -1,7 +1,7 @@
 import { Grid } from "../types/types";
 import { advance } from "./advance";
 
-export const move = (direction: string, position: Grid) => {
+export const move = (direction: string, position: Grid): Grid => {
   let [x, y, o] = position;
   if (direction === "R"){
        switch (o) {
