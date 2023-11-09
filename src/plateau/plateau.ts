@@ -7,7 +7,7 @@ export function Ask(query: any) {
   return new Promise<number[]>((resolve) =>
     readline.question(query, (ans: string) => {
       readline.close();
-      resolve(inputToNumber(ans));
+     return resolve(inputToNumber(ans));
     })
   );
 }
