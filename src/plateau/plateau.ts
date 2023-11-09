@@ -1,4 +1,3 @@
-import * as readline from "readline";
 
 export function Ask(query: any) {
   const readline = require("readline").createInterface({
