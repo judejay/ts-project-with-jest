@@ -1,5 +1,4 @@
-
-export function Ask(query: any) {
+export function ask(query: any) {
   const readline = require("readline").createInterface({
     input: process.stdin,
     output: process.stdout,
@@ -7,7 +6,7 @@ export function Ask(query: any) {
   return new Promise<number[]>((resolve) =>
     readline.question(query, (ans: string) => {
       readline.close();
-     return resolve(inputToNumber(ans));
+      return resolve(inputToNumber(ans));
     })
   );
 }
@@ -21,5 +20,5 @@ const inputToNumber = (input: string): number[] => {
 };
 
 export async function plateau() {
-  var name = await Ask("Input grid X & Y \n");
+  return await ask("Input grid X & Y \n");
 }
