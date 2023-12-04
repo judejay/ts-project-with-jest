@@ -12,7 +12,7 @@ export function ask(query: string) {
   );
 }
 
-const inputToNumber = (input: string): number[] => {
+export const inputToNumber = (input: string): number[] => {
   const numbers = input.split(" ").map(function (str) {
     return parseInt(str);
   });
