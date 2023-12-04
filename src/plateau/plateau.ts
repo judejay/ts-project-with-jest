@@ -1,24 +1,25 @@
-export function ask(query: any) {
-  const readline = require("readline").createInterface({
-    input: process.stdin,
-    output: process.stdout,
-  });
-  return new Promise<number[]>((resolve) =>
+const readline = require("readline").createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
+export function ask(query: string) {
+  return new Promise<string>((resolve) =>
     readline.question(query, (ans: string) => {
       readline.close();
-      return resolve(inputToNumber(ans));
+      return resolve(ans);
     })
   );
 }
 
 const inputToNumber = (input: string): number[] => {
-  const arr = input.split(" ");
-  var numbers = arr.map(function (str) {
+  const numbers = input.split(" ").map(function (str) {
     return parseInt(str);
   });
   return numbers;
 };
 
-export async function plateau() {
-  return await ask("Input grid X & Y \n");
+export async function plateauSize(): Promise<number[]> {
+  const answer = await ask("Input grid X & Y \n");
+  return inputToNumber(answer);
 }
